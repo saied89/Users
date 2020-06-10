@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.saied.users.ui.auth.login.LoginFragment"
-        android:label="fragment_login"
+        android:label="@string/login"
         tools:layout="@layout/fragment_login" />
 </navigation>
