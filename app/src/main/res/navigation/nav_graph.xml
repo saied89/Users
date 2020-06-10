@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/singUpFragment"
-        android:name="com.saied.users.ui.auth.singup.SingUpFragment"
+        android:name="com.saied.users.ui.auth.singup.SignUpFragment"
         android:label="@string/signup"
-        tools:layout="@layout/fragment_sing_up" />
+        tools:layout="@layout/fragment_sign_up" />
 </navigation>

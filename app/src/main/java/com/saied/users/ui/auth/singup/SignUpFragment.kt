@@ -6,17 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.snackbar.Snackbar
-import com.saied.users.databinding.FragmentSingUpBinding
+import com.saied.users.databinding.FragmentSignUpBinding
 
-class SingUpFragment : Fragment() {
+class SignUpFragment : Fragment() {
 
-    private var _binding: FragmentSingUpBinding? = null
+    private var _binding: FragmentSignUpBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSingUpBinding.inflate(inflater)
+        _binding = FragmentSignUpBinding.inflate(inflater)
         return _binding?.root
     }
 
