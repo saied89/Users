@@ -51,6 +51,10 @@ dependencies {
     // checking that a password complies with a custom set of rules
     implementation 'org.passay:passay:1.6.0'
 
+    // Email address validation
+    implementation "commons-validator:commons-validator:1.6"
+
+
     // Material
     def material_version = "1.1.0"
     implementation "com.google.android.material:material:$material_version"
