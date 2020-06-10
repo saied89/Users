@@ -1,11 +1,10 @@
-package com.saied.users
+package com.saied.users.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.findFragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.saied.users.R
 import com.saied.users.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

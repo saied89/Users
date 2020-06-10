@@ -1,4 +1,4 @@
-package com.saied.users.auth.login
+package com.saied.users.ui.auth.login
 
 import androidx.fragment.app.Fragment
 import com.saied.users.R
