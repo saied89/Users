@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.saied.users.R
 import com.saied.users.databinding.FragmentLoginBinding
-import org.koin.android.ext.android.bind
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
@@ -48,6 +47,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             // set login onclick listener
             loginButton.setOnClickListener {
                 viewModel.getUser(unameET.text.toString(), passwordET.text.toString())
+            }
+
+            signUpButton.setOnClickListener {
+                findNavController().navigate(R.id.action_loginFragment_to_singUpFragment)
             }
         }
     }

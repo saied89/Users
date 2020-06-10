@@ -9,5 +9,14 @@
         android:id="@+id/loginFragment"
         android:name="com.saied.users.ui.auth.login.LoginFragment"
         android:label="@string/login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_singUpFragment"
+            app:destination="@id/singUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singUpFragment"
+        android:name="com.saied.users.ui.auth.singup.SingUpFragment"
+        android:label="@string/signup"
+        tools:layout="@layout/fragment_sing_up" />
 </navigation>
