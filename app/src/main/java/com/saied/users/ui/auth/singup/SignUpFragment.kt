@@ -41,3 +41,5 @@ class SignUpFragment : Fragment() {
         }
     }
 }
+
+class SignUpData(val fname: String, val email: String, val password: String, val cPassword: String)
