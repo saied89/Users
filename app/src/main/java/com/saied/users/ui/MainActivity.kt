@@ -3,6 +3,7 @@ package com.saied.users.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.saied.users.R
 import com.saied.users.databinding.ActivityMainBinding
@@ -18,5 +19,11 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(
             findNavController(R.id.nav_host_fragment)
         )
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp()
+                || super.onSupportNavigateUp()
     }
 }
