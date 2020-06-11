@@ -25,6 +25,6 @@
     <fragment
         android:id="@+id/adminFragment"
         android:name="com.saied.users.ui.admin.AdminFragment"
-        android:label="fragment_admin"
+        android:label="@string/admin"
         tools:layout="@layout/fragment_admin" />
 </navigation>

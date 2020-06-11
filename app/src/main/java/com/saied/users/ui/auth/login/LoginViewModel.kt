@@ -10,13 +10,8 @@ import kotlinx.coroutines.launch
 
 class LoginViewModel(private val userRepository: UserRepository) : ViewModel() {
 
-    private val _userLiveData = MutableLiveData<User>()
-    val userLiveData: LiveData<User> = _userLiveData
+    suspend fun getUser(fullName: String, password: String): User? =
+        userRepository.getUser(fullName, password)
 
-    fun getUser(fullName: String, password: String) {
-        viewModelScope.launch {
-            _userLiveData.value = userRepository.getUser(fullName, password)
-        }
-    }
 
 }
