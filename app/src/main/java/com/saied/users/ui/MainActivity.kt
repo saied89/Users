@@ -16,11 +16,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // actionbar title update based on current destination.
+        // https://developer.android.com/guide/navigation/navigation-ui#action_bar
         setupActionBarWithNavController(
             findNavController(R.id.nav_host_fragment)
         )
     }
 
+    // handle up navigation. https://developer.android.com/guide/navigation/navigation-ui#action_bar
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp()

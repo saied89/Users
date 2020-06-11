@@ -1,10 +1,10 @@
 package com.saied.users.ui.auth.singup
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import com.saied.users.databinding.FragmentSignUpBinding
@@ -40,11 +40,15 @@ class SignUpFragment : Fragment() {
             it.fold(onSuccess = {
                 showSnackabr("Success!")
             }, onFailure = { exception ->
-                when(exception) {
-                    is SignUpValidationException.EmailValidationException -> _binding?.unameInputLayout?.error = exception.message
-                    is SignUpValidationException.PasswordValidationException -> _binding?.passwordInputLayout?.error = exception.message
-                    is SignUpValidationException.PasswordConfirmException -> _binding?.cPasswordInputLayout?.error = exception.message
-                    is SignUpValidationException.FullNameEmptyException -> _binding?.fnameInputLayout?.error = exception.message
+                when (exception) {
+                    is SignUpValidationException.EmailValidationException ->
+                        _binding?.unameInputLayout?.error = exception.message
+                    is SignUpValidationException.PasswordValidationException ->
+                        _binding?.passwordInputLayout?.error = exception.message
+                    is SignUpValidationException.PasswordConfirmException ->
+                        _binding?.cPasswordInputLayout?.error = exception.message
+                    is SignUpValidationException.FullNameEmptyException ->
+                        _binding?.fnameInputLayout?.error = exception.message
                 }
             })
         })
