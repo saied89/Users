@@ -1,3 +1,12 @@
 package com.saied.users.data.model
 
-data class User(val fullName: String, val password: String, val isAdmin: Boolean)
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class User(
+    @PrimaryKey val email: String,
+    val fullName: String,
+    val password: String,
+    val isAdmin: Boolean
+)
