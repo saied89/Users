@@ -38,6 +38,7 @@ class SignUpFragment : Fragment() {
             _binding?.cPasswordInputLayout?.error = null
             _binding?.fnameInputLayout?.error = null
             it.fold(onSuccess = {
+                // TODO replace with actual code
                 showSnackabr("Success!")
             }, onFailure = { exception ->
                 when (exception) {
