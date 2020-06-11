@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_loginFragment_to_singUpFragment"
             app:destination="@id/singUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
     </fragment>
     <fragment
         android:id="@+id/singUpFragment"
         android:name="com.saied.users.ui.auth.singup.SignUpFragment"
         android:label="@string/signup"
         tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.saied.users.ui.admin.AdminFragment"
+        android:label="fragment_admin"
+        tools:layout="@layout/fragment_admin" />
 </navigation>

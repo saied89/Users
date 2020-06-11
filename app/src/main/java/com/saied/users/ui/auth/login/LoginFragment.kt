@@ -39,8 +39,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         viewModel.userLiveData.observe(viewLifecycleOwner, Observer { user ->
             if (user == null)
                 showToast("Wrong Username/Password")
-            else
-                showToast("User ${user.fullName}, welcome back!")
+            else if(user.isAdmin)
+                findNavController().navigate(R.id.action_loginFragment_to_adminFragment)
         })
 
         _binding?.apply { // if view is not destroyed
