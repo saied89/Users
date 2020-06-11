@@ -10,7 +10,7 @@ import org.koin.dsl.module
 val appMdoule = module {
     viewModel { LoginViewModel(get()) }
 
-    viewModel { SignupViewModel() }
+    viewModel { SignupViewModel(get()) }
 
     viewModel { AdminViewModel(get()) }
 }

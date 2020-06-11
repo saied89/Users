@@ -26,6 +26,7 @@ val dbModule = module(createdAtStart = true) {
                                 "admin@user.com",
                                 "admin",
                                 "admin",
+                                null,
                                 true
                             )
                         )

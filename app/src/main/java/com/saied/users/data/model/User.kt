@@ -8,5 +8,6 @@ data class User(
     @PrimaryKey val email: String,
     val fullName: String,
     val password: String,
+    val picturePath: String?,
     val isAdmin: Boolean
 )
