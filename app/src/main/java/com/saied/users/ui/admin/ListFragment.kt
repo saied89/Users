@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.saied.users.databinding.FragmentAdminBinding
+import com.saied.users.databinding.FragmentListBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ListFragment : Fragment() {
 
-    private var _binding: FragmentAdminBinding? = null
+    private var _binding: FragmentListBinding? = null
     private val viewModel: ListViewModel by viewModel()
     private val adapter = UserAdapter()
 
@@ -20,7 +20,7 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAdminBinding.inflate(inflater)
+        _binding = FragmentListBinding.inflate(inflater)
         return _binding?.root
     }
 

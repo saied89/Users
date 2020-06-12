@@ -13,7 +13,7 @@ import com.saied.users.databinding.ItemUserBinding
 class UserAdapter : ListAdapter<User, UserViewHolder>(userDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder =
         UserViewHolder(
-            ItemUserBinding.inflate(LayoutInflater.from(parent.context))
+            ItemUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
 
 
