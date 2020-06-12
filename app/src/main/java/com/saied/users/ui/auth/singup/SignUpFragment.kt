@@ -110,10 +110,11 @@ class SignUpFragment : Fragment() {
             _binding?.passwordInputLayout?.error = null
             _binding?.cPasswordInputLayout?.error = null
             _binding?.fnameInputLayout?.error = null
-            it.fold(onSuccess = {
+            it.fold(onSuccess = {// User created successfully
                 Toast.makeText(context, "User created!", Toast.LENGTH_SHORT).show()
                 val res = findNavController().navigateUp()
-            }, onFailure = { exception ->
+            }, onFailure = { exception -> // There was an error creating user.
+                // Various exception types are are shown on different text boxes
                 when (exception) {
                     is SignUpValidationException.EmailValidationException ->
                         _binding?.unameInputLayout?.error = exception.message
