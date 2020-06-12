@@ -11,4 +11,6 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="admin">Admin</string>
     <string name="image">Image</string>
+    <string name="update">update</string>
+    <string name="delete">delete</string>
 </resources>

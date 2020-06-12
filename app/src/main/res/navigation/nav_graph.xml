@@ -40,10 +40,10 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <argument
-            android:name="email"
-            app:argType="string" />
-        <argument
             android:name="editable"
             app:argType="boolean" />
+        <argument
+            android:name="userId"
+            app:argType="integer" />
     </fragment>
 </navigation>

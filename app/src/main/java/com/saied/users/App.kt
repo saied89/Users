@@ -20,7 +20,7 @@ class App : Application() {
             modules(listOf(appMdoule, dbModule))
             get<UserDao>().apply {
                 GlobalScope.launch {
-                    getUser("")
+                    getUser(0)
                 }
             } // Ensure db eagerly instantiated and data preloading is done. https://github.com/InsertKoinIO/koin/issues/608
         }

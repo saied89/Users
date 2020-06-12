@@ -13,9 +13,9 @@ class ProfileViewModel(private val repository: UserRepository) : ViewModel() {
     private val _userLiveData = MutableLiveData<User>()
     val userLiveData: LiveData<User> = _userLiveData
 
-    fun getUser(email: String) {
+    fun getUser(userId: Int) {
         viewModelScope.launch {
-            _userLiveData.value = repository.getUser(email)
+            _userLiveData.value = repository.getUser(userId)
         }
     }
 

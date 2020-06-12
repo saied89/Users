@@ -20,8 +20,8 @@ class ListFragment : Fragment() {
             onDeleteClick = viewModel::deleteUser,
             onItemClick = {
                 val action = ListFragmentDirections.actionAdminFragmentToProfileFragment(
-                    it.email,
-                    false
+                    false,
+                    it.id
                 )
                 findNavController().navigate(action)
             }

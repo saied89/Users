@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -44,9 +43,16 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     val user =
                         viewModel.getUser(unameET.text.toString(), passwordET.text.toString())
                     if (user == null)
-                        showToast("Wrong Username/Password")
+                        showSnackbar("Wrong Username/Password")
                     else if (user.isAdmin)
                         findNavController().navigate(R.id.action_loginFragment_to_adminFragment)
+                    else {
+                        val action = LoginFragmentDirections.actionLoginFragmentToProfileFragment(
+                            userId = user.id,
+                            editable = true
+                        )
+                        findNavController().navigate(action)
+                    }
                 }
 
             }
@@ -56,7 +62,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
     }
 
-    private fun showToast(message: String) {
+    private fun showSnackbar(message: String) {
         _binding?.root?.let {
             Snackbar.make(it, message, Snackbar.LENGTH_SHORT).show()
         }
