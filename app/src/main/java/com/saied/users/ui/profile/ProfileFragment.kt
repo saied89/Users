@@ -20,10 +20,6 @@ class ProfileFragment : Fragment() {
 
     private val viewModel: ProfileViewModel by viewModel()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +40,8 @@ class ProfileFragment : Fragment() {
             _binding?.unameET?.setText(it.email)
             _binding?.fnameET?.isEnabled = args.editable
             _binding?.unameET?.isEnabled = args.editable
+            _binding?.deleteButton?.visibility = if(args.editable) View.VISIBLE else View.GONE
+            _binding?.updateButton?.visibility = if(args.editable) View.VISIBLE else View.GONE
             it.picturePath?.let {
                 with(BitmapFactory.decodeFile(it)) {
                     _binding?.imageView?.setImageBitmap(this)
@@ -51,6 +49,6 @@ class ProfileFragment : Fragment() {
             }
         })
 
-        viewModel.getUser(args.email)
+        viewModel.getUser(args.userId)
     }
 }
