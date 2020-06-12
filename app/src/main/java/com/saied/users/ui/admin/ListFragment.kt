@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.saied.users.databinding.FragmentListBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -16,7 +17,14 @@ class ListFragment : Fragment() {
     private val viewModel: ListViewModel by viewModel()
     private val adapter by lazy(LazyThreadSafetyMode.NONE) {
         UserAdapter(
-            onDeleteClick = viewModel::deleteUser
+            onDeleteClick = viewModel::deleteUser,
+            onItemClick = {
+                val action = ListFragmentDirections.actionAdminFragmentToProfileFragment(
+                    it.email,
+                    it.isAdmin
+                )
+                findNavController().navigate(action)
+            }
         )
     }
 

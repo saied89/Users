@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_adminFragment"
             app:destination="@id/adminFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/singUpFragment"
@@ -26,5 +29,21 @@
         android:id="@+id/adminFragment"
         android:name="com.saied.users.ui.admin.ListFragment"
         android:label="@string/admin"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_adminFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.saied.users.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="editable"
+            app:argType="boolean" />
+    </fragment>
 </navigation>

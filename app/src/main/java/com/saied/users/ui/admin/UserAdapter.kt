@@ -10,7 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.saied.users.data.model.User
 import com.saied.users.databinding.ItemUserBinding
 
-class UserAdapter(private val onDeleteClick: (User) -> Unit) :
+class UserAdapter(
+    private val onDeleteClick: (User) -> Unit,
+    private val onItemClick: (User) -> Unit
+) :
     ListAdapter<User, UserViewHolder>(userDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder =
         UserViewHolder(
@@ -26,10 +29,13 @@ class UserAdapter(private val onDeleteClick: (User) -> Unit) :
                 holder.binding.imageView.setImageBitmap(this)
             }
         }
-        if(item.isAdmin)
+        if (item.isAdmin)
             holder.binding.deleteButton.isEnabled = false
         holder.binding.deleteButton.setOnClickListener {
             onDeleteClick(item)
+        }
+        holder.binding.root.setOnClickListener {
+            onItemClick(item)
         }
     }
 }
