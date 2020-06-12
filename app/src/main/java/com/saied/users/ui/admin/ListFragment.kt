@@ -21,7 +21,7 @@ class ListFragment : Fragment() {
             onItemClick = {
                 val action = ListFragmentDirections.actionAdminFragmentToProfileFragment(
                     it.email,
-                    it.isAdmin
+                    false
                 )
                 findNavController().navigate(action)
             }
@@ -44,7 +44,11 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding?.recyclerView?.run { // Setup recyclerview
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            layoutManager = LinearLayoutManager(
+                context,
+                LinearLayoutManager.VERTICAL,
+                false
+            )
             adapter = this@ListFragment.adapter
         }
 

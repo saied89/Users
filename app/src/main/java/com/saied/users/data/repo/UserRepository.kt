@@ -8,6 +8,8 @@ class UserRepository(private val userDao: UserDao) {
     suspend fun getUser(email: String, password: String): User? =
         userDao.getUser(email, password)
 
+    suspend fun getUser(email: String): User =
+        userDao.getUser(email)
 
     fun getAllUsers(): LiveData<List<User>> =
         userDao.getAllUsers()

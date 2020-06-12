@@ -12,6 +12,9 @@ interface UserDao {
     @Query("SELECT * FROM user WHERE :email = email AND :password = password")
     suspend fun getUser(email: String, password: String): User?
 
+    @Query("SELECT * FROM user WHERE :email = email")
+    suspend fun getUser(email: String): User
+
     @Query("SELECT * FROM user")
     fun getAllUsers(): LiveData<List<User>>
 
