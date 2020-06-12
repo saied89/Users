@@ -12,4 +12,5 @@ The project has three top level packages. `di`, `ui` and `data`.
 
 ###### Hardcoded admin Credentials
 user: admin@user.com
+
 password: admin
