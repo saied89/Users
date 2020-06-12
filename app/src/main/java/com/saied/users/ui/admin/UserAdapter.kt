@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.saied.users.data.model.User
 import com.saied.users.databinding.ItemUserBinding
 
-class UserAdapter : ListAdapter<User, UserViewHolder>(userDiffCallback) {
+class UserAdapter(private val onDeleteClick: (User) -> Unit) :
+    ListAdapter<User, UserViewHolder>(userDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder =
         UserViewHolder(
             ItemUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -24,12 +25,13 @@ class UserAdapter : ListAdapter<User, UserViewHolder>(userDiffCallback) {
                 holder.binding.imageView.setImageBitmap(this)
             }
         }
+        holder.binding.deleteButton.setOnClickListener {
+            onDeleteClick(getItem(position))
+        }
     }
 }
 
-class UserViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root) {
-
-}
+class UserViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root)
 
 private val userDiffCallback = object : DiffUtil.ItemCallback<User>() {
     override fun areItemsTheSame(oldItem: User, newItem: User): Boolean =

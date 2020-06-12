@@ -14,7 +14,11 @@ class ListFragment : Fragment() {
 
     private var _binding: FragmentListBinding? = null
     private val viewModel: ListViewModel by viewModel()
-    private val adapter = UserAdapter()
+    private val adapter = UserAdapter(
+        onDeleteClick = {
+
+        }
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
