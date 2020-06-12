@@ -10,7 +10,7 @@ The project has three top level packages. `di`, `ui` and `data`.
 `ui` holds various screens. The navigation graph *under res/navigation/nav_graph.xml* shows an overview of app screens and their relations.
 `data` contains various classes related to persistence and Room.
 
-###### Hardcoded admin Credentials
+##### Hardcoded admin Credentials
 user: admin@user.com
 
 password: admin
