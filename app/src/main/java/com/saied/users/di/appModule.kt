@@ -1,7 +1,6 @@
 package com.saied.users.di
 
-import com.saied.users.data.repo.UserRepository
-import com.saied.users.ui.admin.AdminViewModel
+import com.saied.users.ui.admin.ListViewModel
 import com.saied.users.ui.auth.login.LoginViewModel
 import com.saied.users.ui.auth.singup.SignupViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -12,5 +11,5 @@ val appMdoule = module {
 
     viewModel { SignupViewModel(get()) }
 
-    viewModel { AdminViewModel(get()) }
+    viewModel { ListViewModel(get()) }
 }

@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.saied.users.databinding.FragmentAdminBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class AdminFragment : Fragment() {
+class ListFragment : Fragment() {
 
     private var _binding: FragmentAdminBinding? = null
-    private val viewModel: AdminViewModel by viewModel()
+    private val viewModel: ListViewModel by viewModel()
     private val adapter = UserAdapter()
 
     override fun onCreateView(
@@ -33,7 +33,7 @@ class AdminFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         _binding?.recyclerView?.run { // Setup recyclerview
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            adapter = this@AdminFragment.adapter
+            adapter = this@ListFragment.adapter
         }
 
         // Subscribe to livedata

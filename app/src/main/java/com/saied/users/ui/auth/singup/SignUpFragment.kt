@@ -128,6 +128,14 @@ class SignUpFragment : Fragment() {
             })
         })
 
+        viewModel.imagePathLiveData.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                with(BitmapFactory.decodeFile(it)) {
+                    _binding?.imageView?.setImageBitmap(this)
+                }
+            }
+        })
+
         _binding?.apply {
             signUpButton.setOnClickListener {
                 viewModel.submitSignUpData(
@@ -145,14 +153,6 @@ class SignUpFragment : Fragment() {
         _binding?.pickImageButton?.setOnClickListener {
             runChooseImage()
         }
-
-        viewModel.imagePathLiveData.observe(viewLifecycleOwner, Observer {
-            it?.let {
-                with(BitmapFactory.decodeFile(it)) {
-                    _binding?.imageView?.setImageBitmap(this)
-                }
-            }
-        })
 
     }
 

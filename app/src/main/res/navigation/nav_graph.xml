@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/adminFragment"
-        android:name="com.saied.users.ui.admin.AdminFragment"
+        android:name="com.saied.users.ui.admin.ListFragment"
         android:label="@string/admin"
         tools:layout="@layout/fragment_admin" />
 </navigation>

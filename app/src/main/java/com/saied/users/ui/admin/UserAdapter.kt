@@ -1,5 +1,6 @@
 package com.saied.users.ui.admin
 
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,11 @@ class UserAdapter : ListAdapter<User, UserViewHolder>(userDiffCallback) {
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.binding.fnameET.text = getItem(position).fullName
+        getItem(position).picturePath?.let {
+            with(BitmapFactory.decodeFile(it)) {
+                holder.binding.imageView.setImageBitmap(this)
+            }
+        }
     }
 }
 
