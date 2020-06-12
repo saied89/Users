@@ -14,11 +14,11 @@ class ListFragment : Fragment() {
 
     private var _binding: FragmentListBinding? = null
     private val viewModel: ListViewModel by viewModel()
-    private val adapter = UserAdapter(
-        onDeleteClick = {
-
-        }
-    )
+    private val adapter by lazy(LazyThreadSafetyMode.NONE) {
+        UserAdapter(
+            onDeleteClick = viewModel::deleteUser
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

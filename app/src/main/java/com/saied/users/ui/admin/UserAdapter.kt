@@ -19,14 +19,17 @@ class UserAdapter(private val onDeleteClick: (User) -> Unit) :
 
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.binding.fnameET.text = getItem(position).fullName
-        getItem(position).picturePath?.let {
+        val item = getItem(position)
+        holder.binding.fnameET.text = item.fullName
+        item.picturePath?.let {
             with(BitmapFactory.decodeFile(it)) {
                 holder.binding.imageView.setImageBitmap(this)
             }
         }
+        if(item.isAdmin)
+            holder.binding.deleteButton.isEnabled = false
         holder.binding.deleteButton.setOnClickListener {
-            onDeleteClick(getItem(position))
+            onDeleteClick(item)
         }
     }
 }
