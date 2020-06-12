@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_delete_24"
-            android:tint="#d32f2f"
+            android:tint="@color/color_delete"
             android:padding="6dp"
             android:background="?android:actionBarItemBackground"
             app:layout_constraintBottom_toBottomOf="parent"
